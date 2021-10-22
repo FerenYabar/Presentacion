@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/modelo/usuario.class';
 import { cuenta, usuarioactivo, localactivo } from '../../login/login-main/services/login.service';
 import { Local } from '../../modelo/local.class';
+import { InfoUserService } from '../services/info-user.service';
 
 
 @Component({
@@ -11,16 +12,16 @@ import { Local } from '../../modelo/local.class';
 })
 export class InfoUserMainComponent implements OnInit {
 
-  constructor(
-  ) {
+  constructor(private infouserServices: InfoUserService) {
    }
 
   ngOnInit(): void {
   }
-  cuentaactiva=cuenta;
+
+  get infouserservice(){
+    return this.infouserServices
+  }
   
-  usuario=usuarioactivo[0];
-  local:Local=localactivo[0];
 
   
 }

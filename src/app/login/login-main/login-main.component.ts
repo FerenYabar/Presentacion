@@ -17,8 +17,7 @@ export class LoginMainComponent implements OnInit {
   get loginserices(){
     return this.LoginService
   }
-
-  
+ 
 }
 
 

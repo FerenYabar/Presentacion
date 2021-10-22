@@ -6,62 +6,32 @@
             </div>
         </div>
 
-        <div class="col-s-12 col-m-6 " *ngIf="cuentaactiva[2]=='0'">
-            <div class="info" *ngIf="usuario">
+        <div class="col-s-12 col-m-6 " *ngIf="infouserservice.cuentaactiva">
+            <div class="info" *ngIf="infouserservice.usuario">
                 <h1>Usuario</h1>
-                <p>{{ usuario.getusuariousuario}}</p>
+                <p>{{ infouserservice.usuario.getusuariousuario}}</p>
                 <h1>Nombres y Apellidos</h1>
-                <p>{{ usuario.getnombreUsuario}}  {{usuario.getApellidoUsuario }}</p>
+                <p>{{ infouserservice.usuario.getnombreUsuario}}  {{infouserservice.usuario.getApellidoUsuario }}</p>
                 <h1>Direccion</h1>
-                <p>{{ usuario.getDireccionUsuario }}</p>
+                <p>{{ infouserservice.usuario.getDireccionUsuario }}</p>
                 <h1>DNI</h1>
-                <p>{{ usuario.getdniUsuario }}</p>
+                <p>{{ infouserservice.usuario.getdniUsuario }}</p>
                 <h1>Numero de Contacto</h1>
-                <p>{{ usuario.getcelularUsuario }}</p>
+                <p>{{ infouserservice.usuario.getcelularUsuario }}</p>
                 <h1>Correo Electronico</h1>
-                <p>{{ usuario.getCorreoUsuario }}</p>
+                <p>{{ infouserservice.usuario.getCorreoUsuario }}</p>
             </div>
         </div>
-        <div *ngIf="cuentaactiva[2]=='1'">
+        <div *ngIf="infouserservice.cuentaactiva[2]=='1'">
             <div class="info" >
                 <h1>COdigo Local</h1>
-                <p>{{local.getcodLocal}}</p>
+                <p>{{infouserservice.local.getcodLocal}}</p>
                 <h1>Nombre Local</h1>
-                <p>{{ local.getnombreLocal}}  </p>
+                <p>{{ infouserservice.local.getnombreLocal}}  </p>
                 <h1>RUC</h1>
-                <p>{{ local.getrucLocal}}</p>
+                <p>{{ infouserservice.local.getrucLocal}}</p>
                 <h1>ubicacion</h1>
-                <p>{{ local.getubicacionLocal }}</p>
+                <p>{{ infouserservice.local.getubicacionLocal }}</p>
             </div>
           </div>
 
-        <div class="col-s-12">
-            <div class="tabla">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Descripcion</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>s</td>
-                            <td>s</td>
-                            <td>s</td>
-                        </tr>
-                        <tr>
-                            <td>s</td>
-                            <td>s</td>
-                            <td>s</td>
-                        </tr>
-                        <tr>
-                            <td>s</td>
-                            <td>s</td>
-                            <td>s</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
