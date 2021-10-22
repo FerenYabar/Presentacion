@@ -29,7 +29,6 @@ export class LoginService {
       cuenta.push(usuario,contrasena,"1")
       localactivo.push(localexistente[0])
       return true
-    
     } 
     if(usuario=='admin' && contrasena=='123') {
       cuenta.push(usuario,contrasena,"2")

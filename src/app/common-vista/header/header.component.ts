@@ -14,14 +14,18 @@ export class HeaderComponent implements OnInit{
 
   }
   cuentaactiva=cuenta
+  usuario=usuarioactivo
 
   ngOnInit(): void {
   }
   borrar(){
-    console.log(usuarioactivo[0])
-    usuarioactivo.splice(0,1)
-    console.log(usuarioactivo[0])
+    console.log(this.usuario[0])
+    this.usuario.splice(0,1)
+    console.log(this.usuario[0])
+    console.log('hola');
   }
+
+
  
   
   

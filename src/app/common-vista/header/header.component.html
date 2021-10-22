@@ -16,8 +16,8 @@
                 <li><a *ngIf="cuentaactiva[2]=='0'|| cuentaactiva[2]=='1'" routerLink='info-user'>Mi perfil</a></li>
                 <li><a *ngIf="cuentaactiva[2]=='0'|| cuentaactiva[2]=='1'" routerLink='entrega-pedidos'>Reservas</a></li>
                 <li><a *ngIf="cuentaactiva[2]=='2'|| cuentaactiva[2]=='1'" href="#">Gestion</a></li>
-                <li><a *ngIf="cuentaactiva.length!=0"  (click)="borrar()" routerLink='login'>Cerrar Sesion</a></li>  
-                <li><a *ngIf="cuentaactiva.length==0" routerLink='login'>Iniciar Secion</a></li>  
+                <li><a *ngIf="usuario.length!=0" (click)="borrar()">Cerrar Sesion</a></li>  
+                <li><a *ngIf="usuario.length==0" routerLink='login'>Iniciar Secion</a></li>  
             </ul>
         </nav>
     </div>
