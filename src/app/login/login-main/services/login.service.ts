@@ -13,8 +13,7 @@ export class LoginService {
   constructor(private route:Router) { }
   Usuario:string=''
   Contrasena:string=''
-  pisicion:number=0
-  
+  xd=cuenta
 
   Validacion(usuario:string,contrasena:string):Boolean{
     const usuarioexistente:Usuario[]=usuarios.filter(elemen => (elemen.getusuariousuario==usuario && elemen.getconstraseñaUsuario==contrasena))
@@ -42,12 +41,16 @@ export class LoginService {
   ingresar():void{   
     if(this.Validacion(this.Usuario,this.Contrasena)){
       this.route.navigate(['categorias'])
+      console.log(cuenta)
     }
     else{
       alert('Invalido el usuario y contraseña')
     }
   }
+
+  
 }
+
 export const cuenta:String[]=[]
 export const usuarioactivo:Usuario[]=[]
 export const localactivo:Local[]=[]

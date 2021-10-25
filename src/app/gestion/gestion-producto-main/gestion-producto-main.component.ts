@@ -30,8 +30,6 @@ export class GestionProductoMainComponent implements OnInit {
   }
   agregar(){
     this.gestionproductoservice.agregarproducto(this.nombreProducto,this.mililitrosProducto,this.descripcionProducto,this.volalcoholProducto,this.imagenProducto,this.marcaProducto,this.categoriaProducto)
-    
-
   }
   eliminar(){
     this.gestionproductoservice.eliminarproducto(this.eliminacion)

@@ -1,18 +1,18 @@
 
         <div class="col-s-12">
             <div class="titulo">
-                <h1>RON</h1>
+                <h1 *ngIf="productoService.categoria.length!=0">{{productoService.categoria[0].getnombreCategoria}}</h1>
             </div>
         </div>
 
         <div class="col-s-12 content">
             <div class="galeria">
 
-                <div *ngFor="let productolocal1 of productoService.productoslocal" class="col-s-6 col-m-4 fotos">
+                <div *ngFor="let productolocal1 of productoService.filtrar()" class="col-s-6 col-m-4 fotos">
                     
                     <img src={{productolocal1.getproducto.getimagenproducto}} alt="">
                         <div class="infor">
-                            <h1>{{productolocal1.getproducto.getnombreproducto}}</h1>
+                            <h1 >{{productolocal1.getproducto.getnombreproducto}}</h1>
                             <p>{{productolocal1.getproducto.getdescripcionproducto}}</p>
                             <h2>{{productolocal1.getprecioproductolocal}}</h2>
                         </div>

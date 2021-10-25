@@ -66,12 +66,12 @@
                 placeholder="categoriaProducto" 
                 name="categoriaProducto"
                 [(ngModel)]="categoriaProducto">
+
                     <option [ngValue]=categoria *ngFor="let categoria of categorias;let i=index">{{categoria.getnombreCategoria}}</option>
                     <input  
-                
                 >
                 </select>
-                </td>
+                </td>   
         </tr>
         <tr>
             <td><label for="marcaProducto">Marca Producto</label></td>

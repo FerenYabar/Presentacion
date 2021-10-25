@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoriaMainComponent } from './categoria-main/categoria-main.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -12,7 +13,8 @@ import { CategoriaMainComponent } from './categoria-main/categoria-main.componen
     CategoriaMainComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ]
 })
 export class CategoriaModule { }

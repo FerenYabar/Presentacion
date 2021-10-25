@@ -16,19 +16,24 @@ export class HeaderComponent implements OnInit{
   cuentaactiva=cuenta
   usuario=usuarioactivo
 
+
   ngOnInit(): void {
   }
+
+  ingresar(){
+    
+  }
+
   borrar(){
-    console.log(this.usuario[0])
-    this.usuario.splice(0,1)
-    console.log(this.usuario[0])
-    console.log('hola');
+    console.log(this.cuentaactiva)
+    console.log(cuenta)
+    cuenta.splice(0,3)
+    usuarioactivo.splice(0,1)
+    // this.cuentaactiva.splice(2,1,'0')
+    
   }
 
 
- 
-  
-  
-
 }
+
 

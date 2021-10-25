@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { categorias, Categoria } from '../../modelo/categoria.class';
+import { Router } from '@angular/router';
+import { CategoriaService } from '../services/categoria.service';
 
 
 @Component({
@@ -9,9 +11,14 @@ import { categorias, Categoria } from '../../modelo/categoria.class';
 })
 export class CategoriaMainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private categoriaServices:CategoriaService) { 
+  }
+
+  get categoriaservices(){
+    return this.categoriaServices
+  }
 
   ngOnInit(): void {
   }
-  categorias:Categoria[]=categorias
+  
 }
