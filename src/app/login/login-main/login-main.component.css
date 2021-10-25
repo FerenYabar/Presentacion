@@ -89,3 +89,8 @@
     0 0 17px rgba(242, 30, 242, 0.78),
     0 0 20px rgba(242, 30, 207, 0.92);
 }
+
+.registrar a{
+    text-decoration: none;
+    color: #fac6ffe7;
+}

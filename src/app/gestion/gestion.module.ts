@@ -9,6 +9,8 @@ import { GestionCategoriaservice } from './gestion-categoria-main/services/gesti
 import { GestionMarcaservice } from './gestion-marca-main/services/gestion-marca.service';
 import { Gestionproductoservice } from './gestion-producto-main/services/gestion-producto.service';
 import { GestionProveedorservice } from './gestion-proveedor-main/services/gestion-proveedor.service';
+import { TotalGestionComponent } from './total-gestion/total-gestion.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -18,16 +20,18 @@ import { GestionProveedorservice } from './gestion-proveedor-main/services/gesti
     GestionProductoMainComponent,
     GestionMarcaMainComponent,
     GestionProveedorMainComponent,
+    TotalGestionComponent,
     
   ],
   exports:[
     GestionCategoriaMainComponent,
     GestionProductoMainComponent,
     GestionMarcaMainComponent,
-    GestionProveedorMainComponent
+    GestionProveedorMainComponent,
+    TotalGestionComponent
   ],
   imports: [
-    CommonModule,FormsModule
+    CommonModule,FormsModule,AppRoutingModule
   ],
   providers:[
     GestionCategoriaservice,

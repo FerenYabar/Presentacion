@@ -16,8 +16,9 @@
                 <li><a *ngIf="usuarioactivo.length!=0 ||localactivo.length!=0" routerLink='info-user'>Mi perfil</a></li>
                 <li><a *ngIf="usuarioactivo.length!=0 ||localactivo.length!=0" routerLink='entrega-pedidos'>Reservas</a></li>
                 <li><a *ngIf="adminactivo.length!=0 ||localactivo.length!=0" routerLink='gestion-distribuidor' >Gestion</a></li>
+                <li><a *ngIf="adminactivo.length!=0 ||localactivo.length!=0" routerLink='total-gestion' >Gestionar</a></li>
                 <li><a *ngIf="adminactivo.length!=0||usuarioactivo.length!=0|| localactivo.length!=0"  (click)="borrar()" routerLink='login'>Cerrar Sesion</a></li>  
-                <li><a *ngIf="adminactivo.length==0 && usuarioactivo.length==0 && localactivo.length==0" routerLink='login'>Iniciar Secion</a></li>  
+                <li><a *ngIf="adminactivo.length==0 && usuarioactivo.length==0 && localactivo.length==0" routerLink='login'>Iniciar Sesion</a></li>  
             </ul>
         </nav>
     </div>

@@ -16,6 +16,7 @@ import { ProductoDistribuidorMainComponent } from "./gestion-distribuidor/produc
 import { InfoUserMainComponent } from './info-user/info-user-main/info-user-main.component';
 import { RegistroUsuarioMainComponent } from './registro-usuario/registro-usuario-main/registro-usuario-main.component';
 import { ReversaMainComponent } from './reversa/reversa-main/reversa-main.component';
+import { TotalGestionComponent } from './gestion/total-gestion/total-gestion.component';
 
 
 
@@ -68,6 +69,11 @@ const routes: Routes = [
     {
         path: 'gestion-proveedor',
         component: GestionProveedorMainComponent,
+        pathMatch: 'full'
+    },
+    {
+        path: 'total-gestion',
+        component: TotalGestionComponent,
         pathMatch: 'full'
     },
     {
