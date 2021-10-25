@@ -18,7 +18,8 @@
                         </div>
                         <div class="boton">
                             <ul>
-                                <li><button  (click)="productoService.agregar(productolocal1)">Carrito</button></li>
+                                <li><button  *ngIf="productoService.usuarioactivo.length==0 && productoService.localactivo.length==0 && productoService.adminactivo.length==0" (click)="productoService.login()">Carrito</button></li>
+                                <li *ngIf="productoService.usuarioactivo.length!=0 || productoService.localactivo.length!=0 || productoService.adminactivo.length!=0" ><button (click)="productoService.agregar(productolocal1)">Carrito</button></li>
                             </ul>
                         </div>
                 </div>

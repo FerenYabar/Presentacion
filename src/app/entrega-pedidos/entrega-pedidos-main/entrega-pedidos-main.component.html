@@ -1,12 +1,25 @@
 <div class="col-s-12">
     <div class="caja1">
-        <table class="col-s-12">
-
-            <tr *ngFor="let reserva of entregaService.listareservas;let i=index">
-                <td class="col-s-10 pedido">{{reserva.getcodReserva}}</td>
-                <td class="col-s-2 entrega"><button (click)="entregaService.eliminar(i)">Eliminar</button><button >Vista</button></td>
-            </tr>
-        </table>
+        <div *ngIf="entregaService.usuarioactivo.length!=0" >
+            <table class="col-s-12">
+            
+                <tr *ngFor="let reserva of entregaService.getlistareservas;let i=index">
+                    <td class="col-s-10 pedido">{{reserva.getcodReserva}}</td>
+                    <td class="col-s-2 entrega"><button (click)="entregaService.eliminar(i)">Eliminar</button><button (click)="entregaService.vista(reserva)">Vista</button></td>
+                </tr>
+            </table>
+            </div>
+            
+            <div *ngIf="entregaService.localactivo.length!=0">
+                <table class="col-s-12">
+                <tr *ngFor="let reserva of entregaService.getlistareservas;let i=index">
+                    <td class="col-s-10 pedido">{{reserva.getcodReserva}}-{{reserva.getusuarioreserva.getApellidoUsuario}}</td>
+                    <td class="col-s-2 entrega"><button (click)="entregaService.eliminar(i)">Marcar Entregado</button><button (click)="entregaService.vista(reserva)">Vista</button></td>
+                </tr>
+            </table>
+            </div>
+           
+       
     </div>
     
 </div>

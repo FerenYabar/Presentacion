@@ -23,16 +23,16 @@
                 </div>
             </div>
             <hr>
-            <div class="detalles " *ngFor="let producto of descripcionboletaService.productos">
+            <div class="detalles " *ngFor="let detallereserva1 of descripcionboletaService.detallereserva">
                 
                 <div   class="producto">
                     <div id="nombre">
-                        <p>{{producto.getproductoDetalleReserva.getproducto.getnombreproducto}}</p>
+                        <p>{{detallereserva1.getproductoDetalleReserva.getproducto.getnombreproducto}}</p>
                     </div>
 
                     <div id="precio">
                         
-                        <p> {{producto.getcantiaddDEtalleReserva}} ㅤㅤㅤㅤㅤㅤㅤ{{producto.getproductoDetalleReserva.getprecioproductolocal*producto.getcantiaddDEtalleReserva}}</p>
+                        <p> {{detallereserva1.getcantiaddDEtalleReserva}} ㅤㅤㅤㅤㅤㅤㅤ{{detallereserva1.getproductoDetalleReserva.getprecioproductolocal*detallereserva1.getcantiaddDEtalleReserva}}</p>
                     </div>
                 </div>
                 
@@ -43,7 +43,7 @@
                     <p>Total</p>
                 </div>
                 <div id="total-precio">
-                    <p>{{descripcionboletaService.total(descripcionboletaService.getproductos)}}</p>
+                    <p>{{descripcionboletaService.total(descripcionboletaService.detallereserva)}}</p>
                 </div>
             </div>
             

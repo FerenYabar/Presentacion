@@ -22,25 +22,25 @@
         <div class="col-s-12 content">
             <div class="galeria">
 
-                <div *ngFor="let productolocal of getproductolocalservice.productoslocal" class="col-s-6 col-m-4 fotos">
-                    <img src="{{productolocal.getproducto.getimagenproducto}}" alt="">
+                <div *ngFor="let producto of getproductolocalservice.getproductofaltantes" class="col-s-6 col-m-4 fotos">
+                    <img src="{{producto.getimagenproducto}}" alt="">
                         <div class="infor">
-                            <h1>{{productolocal.getproducto.getnombreproducto}}</h1>
-                            <p>{{productolocal.getproducto.getdescripcionproducto}}</p>
+                            <h1>{{producto.getnombreproducto}}</h1>
+                            <p>{{producto.getdescripcionproducto}}</p>
                         </div>
                         <div class="boton">
                             <div class="price">
                                 <h2>Precio</h2>
                             </div>
                             <div class="for">
-                                <form (ngSubmit)="getproductolocalservice.agregar()" action="">
+                                <form (ngSubmit)="getproductolocalservice.agregar(producto)" action="">
                                     <label for="precio">Precio</label>
                                         <input type="number"
                                         class="col-s-12"                                       
                                         id="precio" 
                                         placeholder="Precio" 
                                         name="precio"
-                                        [(ngModel)]="precio">
+                                        [(ngModel)]="getproductolocalservice.precio">
                                     <div class="enviar">
                                         <button  type="submit">Agregar</button>
                                     </div>

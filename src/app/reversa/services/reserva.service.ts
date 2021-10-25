@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { DetalleReserva, detallesreservas } from "src/app/modelo/detallereserva.class";
+import { reservaactiva } from '../../entrega-pedidos/servicios.service';
 
 
 @Injectable()
@@ -7,7 +8,7 @@ export class ReservaService{
   detallesreservas:DetalleReserva[]=detallesreservas
   
   get getproductos():DetalleReserva[]{
-      const detallesreservas= this.detallesreservas.filter(elemen => elemen.getReservas.getcodReserva=="R0001"); 
+      const detallesreservas= this.detallesreservas.filter(elemen => elemen.getReservas==reservaactiva[0]); 
       return detallesreservas
 
           

@@ -14,7 +14,6 @@ export class EntregaPedidosMainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.entregaService.revisarlista();
 
   }
 

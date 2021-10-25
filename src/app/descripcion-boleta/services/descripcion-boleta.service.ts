@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DetalleReserva, detallesreservas } from 'src/app/modelo/detallereserva.class';
-import { productos } from '../../modelo/producto.class';
+import { reservaactiva } from '../../entrega-pedidos/servicios.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,24 +8,18 @@ import { productos } from '../../modelo/producto.class';
 export class descripcionboletaService {
 
   constructor() { 
-    
+    console.log(this.detallereserva)
   }
 
-  detallesreservas:DetalleReserva[]=detallesreservas;
-  productos= this.detallesreservas.filter(elemen => elemen.getReservas.getcodReserva=="R0001");
-  
-  get getproductos():DetalleReserva[]{
-    const detallesreservas= this.detallesreservas.filter(elemen => elemen.getReservas.getcodReserva=="R0001"); 
-    return detallesreservas
-
-        
-}
+  detallereserva= detallesreservas.filter(elemen => elemen.getReservas.getcodReserva==reservaactiva[0].getcodReserva);
 
   total(detallereserva:DetalleReserva[]):number{
     let cant:number=0
     detallereserva.forEach(element => {
     cant = cant+(element.getproductoDetalleReserva.getprecioproductolocal*element.getcantiaddDEtalleReserva) 
     }); 
+    console.log(this.detallereserva)
+    console.log(reservaactiva[0])
     return cant
   }
 }
