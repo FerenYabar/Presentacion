@@ -16,6 +16,7 @@ import { GestionModule } from './gestion/gestion.module';
 import { GestionDistribuidorModule } from './gestion-distribuidor/gestion-distribuidor.module';
 import { CommonVistaModule } from './common-vista/common-vista.module';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AppRoutingModule } from './app-routing.module';
     GestionModule,
     GestionDistribuidorModule,
     CommonVistaModule,
+    FormsModule
   ],
   // providers: [
 

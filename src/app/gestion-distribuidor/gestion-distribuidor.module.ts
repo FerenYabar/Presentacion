@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductoDistribuidorMainComponent } from './producto-distribuidor-main/producto-distribuidor-main.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,9 @@ import { ProductoDistribuidorMainComponent } from './producto-distribuidor-main/
     ProductoDistribuidorMainComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
+  
 })
 export class GestionDistribuidorModule { }

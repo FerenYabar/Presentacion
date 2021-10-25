@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GestionDistribuidorService } from '../service/gestion-distribuidor.service';
 
 @Component({
   selector: 'app-producto-distribuidor-main',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductoDistribuidorMainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productolocalservice:GestionDistribuidorService) { }
 
   ngOnInit(): void {
   }
-
+  get getproductolocalservice(){
+    return this.productolocalservice
+  }
+ precio=0
 }

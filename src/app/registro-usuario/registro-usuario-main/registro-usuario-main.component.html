@@ -1,5 +1,5 @@
 <div class="col-s-12">
-    <form (ngSubmit)="registrar()">
+    <form (ngSubmit)="getresgistrousuarioService.registrar()">
       <div class="formulario">
         <label for="nombre">Nombres:</label>
         <input 
@@ -7,7 +7,7 @@
         id="nombre"
         placeholder="Ingrese su nombre"
         name="nombreusuario"
-        [(ngModel)]="NombreUsuario"
+        [(ngModel)]="getresgistrousuarioService.NombreUsuario"
         >
       </div>
       <div class="formulario">
@@ -17,7 +17,7 @@
         id="apellido"
         placeholder="Ingrese su apellido"
         name="apellidousuario"
-        [(ngModel)]="ApeliidoUsuario"
+        [(ngModel)]="getresgistrousuarioService.ApeliidoUsuario"
         >
       </div>
       <div class="formulario">
@@ -27,7 +27,7 @@
         id="usuario"
         placeholder="usuario"
         name="usuario"
-        [(ngModel)]="Usuario"
+        [(ngModel)]="getresgistrousuarioService.Usuario"
         >
       </div>
       <div class="formulario">
@@ -37,7 +37,7 @@
         id="contrasena"
         placeholder="Ingrese su contraseña"
         name="contrasena"
-        [(ngModel)]="Contrasena"
+        [(ngModel)]="getresgistrousuarioService.Contrasena"
         >
       </div>
       <div class="formulario">
@@ -47,7 +47,7 @@
         id="concontrasena"
         placeholder="Ingrese denuevo su contraseña"
         name="concontrasena"
-        [(ngModel)]="Contrasenaa"
+        [(ngModel)]="getresgistrousuarioService.Contrasenaa"
         >
       </div>
       <div class="formulario">
@@ -57,7 +57,7 @@
         id="dni"
         placeholder="Ingrese su DNI"
         name="dni"
-        [(ngModel)]="dniUsuario"
+        [(ngModel)]="getresgistrousuarioService.dniUsuario"
         >
       </div>
       <div class="formulario">
@@ -67,7 +67,7 @@
         id="celular"
         placeholder="Ingrese su celular"
         name="celular"
-        [(ngModel)]="Celular"
+        [(ngModel)]="getresgistrousuarioService.Celular"
         >
       </div>
       <div class="formulario">
@@ -77,7 +77,7 @@
         id="correo"
         placeholder="Ingrese su correo"
         name="correo"
-        [(ngModel)]="Correo"
+        [(ngModel)]="getresgistrousuarioService.Correo"
         >
       </div>
       <div class="formulario">
@@ -87,7 +87,7 @@
         id="direccion"
         placeholder="Ingrese su direccion"
         name="direccion"
-        [(ngModel)]="Direccion"
+        [(ngModel)]="getresgistrousuarioService.Direccion"
         >
       </div>
 
