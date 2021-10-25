@@ -12,12 +12,12 @@
                 <img src="../../../assets/img/carro.svg" alt="carrito">
             </a>
             <ul>
-                <li><a *ngIf="cuentaactiva.length==0" routerLink='' class="active">Bebidas</a></li>
-                <li><a *ngIf="cuentaactiva[2]=='0'|| cuentaactiva[2]=='1'" routerLink='info-user'>Mi perfil</a></li>
-                <li><a *ngIf="cuentaactiva[2]=='0'|| cuentaactiva[2]=='1'" routerLink='entrega-pedidos'>Reservas</a></li>
-                <li><a *ngIf="cuentaactiva[2]=='2'|| cuentaactiva[2]=='1'" href="#">Gestion</a></li>
-                <li><a *ngIf="cuentaactiva.length!=0" (click)="borrar()">Cerrar Sesion</a></li>  
-                <li><a *ngIf="cuentaactiva.length==0" (click)="ingresar()" routerLink='login'>Iniciar Sesion</a></li>  
+                <li><a routerLink='' class="active">Bebidas</a></li>
+                <li><a *ngIf="usuarioactivo.length!=0 ||localactivo.length!=0" routerLink='info-user'>Mi perfil</a></li>
+                <li><a *ngIf="usuarioactivo.length!=0 ||localactivo.length!=0" routerLink='entrega-pedidos'>Reservas</a></li>
+                <li><a *ngIf="adminactivo.length!=0 ||localactivo.length!=0" href="#">Gestion</a></li>
+                <li><a *ngIf="adminactivo.length!=0||usuarioactivo.length!=0|| localactivo.length!=0"  (click)="borrar()" routerLink='login'>Cerrar Sesion</a></li>  
+                <li><a *ngIf="adminactivo.length==0 && usuarioactivo.length==0 && localactivo.length==0" routerLink='login'>Iniciar Secion</a></li>  
             </ul>
         </nav>
     </div>

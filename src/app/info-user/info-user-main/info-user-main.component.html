@@ -6,32 +6,34 @@
             </div>
         </div>
 
-        <div class="col-s-12 col-m-6 " *ngIf="infouserservice.cuentaactiva">
-            <div class="info" *ngIf="infouserservice.usuario">
+        <div class="col-s-12 col-m-6 " *ngIf="serviceUsuario.usuario.length!=0">
+            <div class="info" >
                 <h1>Usuario</h1>
-                <p>{{ infouserservice.usuario.getusuariousuario}}</p>
+                <p>{{ serviceUsuario.usuario[0].getusuariousuario}}</p>
                 <h1>Nombres y Apellidos</h1>
-                <p>{{ infouserservice.usuario.getnombreUsuario}}  {{infouserservice.usuario.getApellidoUsuario }}</p>
+                <p>{{ serviceUsuario.usuario[0].getnombreUsuario}}  {{serviceUsuario.usuario[0].getApellidoUsuario }}</p>
                 <h1>Direccion</h1>
-                <p>{{ infouserservice.usuario.getDireccionUsuario }}</p>
+                <p>{{ serviceUsuario.usuario[0].getDireccionUsuario }}</p>
                 <h1>DNI</h1>
-                <p>{{ infouserservice.usuario.getdniUsuario }}</p>
+                <p>{{ serviceUsuario.usuario[0].getdniUsuario }}</p>
                 <h1>Numero de Contacto</h1>
-                <p>{{ infouserservice.usuario.getcelularUsuario }}</p>
+                <p>{{ serviceUsuario.usuario[0].getcelularUsuario }}</p>
                 <h1>Correo Electronico</h1>
-                <p>{{ infouserservice.usuario.getCorreoUsuario }}</p>
+                <p>{{ serviceUsuario.usuario[0].getCorreoUsuario }}</p>
             </div>
         </div>
-        <div *ngIf="infouserservice.cuentaactiva[2]=='1'">
+        <div *ngIf="serviceUsuario.local.length!=0">
             <div class="info" >
                 <h1>COdigo Local</h1>
-                <p>{{infouserservice.local.getcodLocal}}</p>
+                <p>{{serviceUsuario.local[0].getcodLocal}}</p>
                 <h1>Nombre Local</h1>
-                <p>{{ infouserservice.local.getnombreLocal}}  </p>
+                <p>{{ serviceUsuario.local[0].getnombreLocal}}  </p>
                 <h1>RUC</h1>
-                <p>{{ infouserservice.local.getrucLocal}}</p>
+                <p>{{ serviceUsuario.local[0].getrucLocal}}</p>
                 <h1>ubicacion</h1>
-                <p>{{ infouserservice.local.getubicacionLocal }}</p>
+                <p>{{ serviceUsuario.local[0].getubicacionLocal }}</p>
             </div>
           </div>
+
+
 

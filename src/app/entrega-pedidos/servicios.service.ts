@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Reserva, reservas } from '../modelo/reserva.class';
+import { usuarioactivo } from '../login/login-main/services/login.service';
+import { usuarios, Usuario } from '../modelo/usuario.class';
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +12,21 @@ export class ServiciosService {
     
   }
 
+  usuaris:Usuario[] = usuarios;
   reservas:Reserva[] = reservas;
-  reservasEntregado:Reserva[]=[];
-  reservasnoEntregado:Reserva[]=[];
+  listareservas = this.reservas.filter(element => element.getusuarioreserva ==  usuarioactivo[0]);
 
-  entregado(numero:number){
-    this.reservasEntregado.unshift(this.reservasnoEntregado[numero])
-    this.reservasnoEntregado.splice(numero,1);
-    
+  eliminar(numero:number){
+    this.listareservas.splice(numero,1);
   }
   revisarlista(){
+    
     for (let i= 0; i< reservas.length; i++) {
-      if(reservas[i].getestadoreserva){
-          this.reservasEntregado.unshift(reservas[i]);
+      if(this.listareservas[i].getestadoreserva){
+          this.listareservas.unshift(reservas[i]);
       }else{
-        this.reservasnoEntregado.unshift(reservas[i])
+        this.listareservas.unshift(reservas[i])
+
       }
       
     }
