@@ -23,7 +23,7 @@ export class LoginService {
       usuarioactivo.push(usuarioexistente[0])
       return true
     }
-    const localexistente:Local[]=locales.filter(elemen => (elemen.getrucLocal==usuario && elemen.getcontraseña==contrasena))
+    const localexistente:Local[]=locales.filter(elemen => (elemen.getrucLocal==usuario && elemen.getcontrasena==contrasena))
     if (localexistente.length!=0 ) {
       localactivo.push(localexistente[0])
       return true

@@ -4,25 +4,26 @@
     </div>
 </div>
 <div class="col-s-12">
-    <form  (ngSubmit)="agregar()" action="">
+    <form   action="" (ngSubmit)="crearLocal()" >
+        
         <table class="col-s-12">
 
             <tr>
                 <td><label for="nombre">Nombre Empresa</label></td>
-                <td><input type="text" 
+                 <td><input type="text" 
                     id="nombre" 
                     placeholder="Nombre" 
                     name="nombrecategoria"
-                    [(ngModel)]="nombreLocal">
-                    </td>
+                    [(ngModel)]="NuevoLocal.nombreLocal">
+                    </td> 
             </tr>
             <tr>
                 <td><label for="ubicacion">Ubicacion</label></td>
                 <td><input type="text" 
                     id="ubicacion" 
-                    placeholder="ubiacion" 
+                    placeholder="ubicacion" 
                     name="ubicacion"
-                    [(ngModel)]="ubicacionLocal">
+                    [(ngModel)]="NuevoLocal.ubicacionLocal">
                     </td>
             </tr>
 
@@ -32,7 +33,7 @@
                     id="ruc" 
                     placeholder="ruc" 
                     name="ruc"
-                    [(ngModel)]="rucLocal">
+                    [(ngModel)]="NuevoLocal.rucLocal">
                     </td>
             </tr>
 
@@ -42,7 +43,7 @@
                     id="contraseña" 
                     placeholder="contraseña" 
                     name="contraseña"
-                    [(ngModel)]="contrasenaLocal">
+                    [(ngModel)]="NuevoLocal.contrasena">
                     </td>
             </tr>
             
@@ -50,12 +51,13 @@
         </table>
         
         <div class="col-s-3 boton">
-            <button type="summit">Agregar</button>
+            <button type="summit" >Agregar</button>
         </div>
     </form>
-    <form (ngSubmit)="eliminar()" action="">
+    <form  action="">
+        
         <div class="col-s-3 boton">
-            <button type="submit" class="extra">Eliminar</button>
+            
         </div>
         <div class="cajat col-s-12">
 
@@ -65,22 +67,74 @@
                     <th>Nombre Empresa</th>
                     <th>Ubicacion</th>
                     <th>Ruc</th>
-                    <th>Eliminacion</th>
+                    <th>Contraseña</th>
 
                 </tr>
             
-                <tr *ngFor="let local of locales;let i=index">
-                    <td>{{local.getcodLocal}}</td>
-                    <td>{{local.getnombreLocal}}</td>
-                    <td>{{local.getubicacionLocal}}</td>
-                    <td>{{local.getrucLocal}}</td>
-                    <td><input type="checkbox"   (click)="eliminacion.unshift(i)"></td>
-
+                <tr *ngFor="let local of lista;let i=index">
+                    <td>{{local.codLocal}}</td>
+                    <td>{{local.nombreLocal}}</td>
+                    <td>{{local.ubicacionLocal}}</td>
+                    <td>{{local.rucLocal}}</td>
+                    <td>{{local.contrasena}}</td>
+                    <td><button type="submit" class="extra" (click)="eliminarLocal(local.codLocal)">Eliminar</button></td>
+                    <td><button type="cumbre" class="extra" (click)="LocalActu(local)">Editar</button><td>
+<!--(click)="eliminacion.unshift(i)"-->
                 </tr>
             
             
             </table>
 
+        </div>
+    </form>
+    <form   action="" (ngSubmit)="actualizarLocales()" >
+        
+        <table class="col-s-12">
+
+            <tr>
+                <td><label for="nombre">Nombre Empresa</label></td>
+                 <td><input type="text" 
+                    id="nombre" 
+                    placeholder="Nombre" 
+                    name="nombrecategoria"
+                    [(ngModel)]="actualizarLocal.nombreLocal">
+                    </td> 
+            </tr>
+            <tr>
+                <td><label for="ubicacion">Ubicacion</label></td>
+                <td><input type="text" 
+                    id="ubicacion" 
+                    placeholder="ubicacion" 
+                    name="ubicacion"
+                    [(ngModel)]="actualizarLocal.ubicacionLocal">
+                    </td>
+            </tr>
+
+            <tr>
+                <td><label for="ruc">Ruc</label></td>
+                <td><input type="text" 
+                    id="ruc" 
+                    placeholder="ruc" 
+                    name="ruc"
+                    [(ngModel)]="actualizarLocal.rucLocal">
+                    </td>
+            </tr>
+
+            <tr>
+                <td><label for="contraseña">Contraseña</label></td>
+                <td><input type="password" 
+                    id="contraseña" 
+                    placeholder="contraseña" 
+                    name="contraseña"
+                    [(ngModel)]="actualizarLocal.contrasena">
+                    </td>
+            </tr>
+            
+
+        </table>
+        
+        <div class="col-s-9 boton">
+            <button type="cumbre" >Guardar Datos Nuevos</button>
         </div>
     </form>
 </div>
