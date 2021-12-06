@@ -31,6 +31,7 @@ export class GestionProveedorMainComponent implements OnInit {
     get lista(){
       return this.gestionProveedorservice.lista;
     }
+    codLocal:number=0;
     nombreLocal:String="";
     ubicacionLocal:String="";
     rucLocal:String="";
@@ -51,13 +52,18 @@ export class GestionProveedorMainComponent implements OnInit {
       console.log(id)
     }
 
-    public actualizarLocal = new Local(0,"","","","")
+    
     
     LocalActu(LocalAActualizar:Local){
-      this.actualizarLocal = LocalAActualizar
+      this.codLocal=LocalAActualizar.codLocal
+      this.nombreLocal = LocalAActualizar.nombreLocal
+      this.ubicacionLocal=LocalAActualizar.ubicacionLocal
+      this.rucLocal=LocalAActualizar.rucLocal
+      this.contrasena=LocalAActualizar.contrasena
     }
     actualizarLocales(){
-      this. gestionProveedorservice.updateLocal(this.actualizarLocal,this.actualizarLocal.codLocal)
+      this.NuevoLocal = new Local(this.codLocal, this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasena)
+      this. gestionProveedorservice.updateLocal(this.NuevoLocal,this.NuevoLocal.codLocal)
       this.gestionProveedorservice.listarProveedor();
       this.gestionProveedorservice.listarProveedor();
     }

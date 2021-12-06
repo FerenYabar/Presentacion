@@ -90,14 +90,22 @@
     <form   action="" (ngSubmit)="actualizarLocales()" >
         
         <table class="col-s-12">
-
+            <tr>
+                <td><label for="codigo">Codigo</label></td>
+                 <td><input type="text" disabled 
+                    id="codigo" 
+                    placeholder="codigo" 
+                    name="codigo"
+                    [(ngModel)]="codLocal">
+                    </td> 
+            </tr>
             <tr>
                 <td><label for="nombre">Nombre Empresa</label></td>
                  <td><input type="text" 
                     id="nombre" 
                     placeholder="Nombre" 
                     name="nombrecategoria"
-                    [(ngModel)]="actualizarLocal.nombreLocal">
+                    [(ngModel)]="nombreLocal">
                     </td> 
             </tr>
             <tr>
@@ -106,7 +114,7 @@
                     id="ubicacion" 
                     placeholder="ubicacion" 
                     name="ubicacion"
-                    [(ngModel)]="actualizarLocal.ubicacionLocal">
+                    [(ngModel)]="ubicacionLocal">
                     </td>
             </tr>
 
@@ -116,7 +124,7 @@
                     id="ruc" 
                     placeholder="ruc" 
                     name="ruc"
-                    [(ngModel)]="actualizarLocal.rucLocal">
+                    [(ngModel)]="rucLocal">
                     </td>
             </tr>
 
@@ -126,7 +134,7 @@
                     id="contraseña" 
                     placeholder="contraseña" 
                     name="contraseña"
-                    [(ngModel)]="actualizarLocal.contrasena">
+                    [(ngModel)]="contrasena">
                     </td>
             </tr>
             
