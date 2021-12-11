@@ -40,32 +40,16 @@ export class GestionProveedorMainComponent implements OnInit {
     public NuevoLocal = new Local(0,this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasena)
 
     crearLocal(){
-      this.gestionProveedorservice.agregarProveedor(this.NuevoLocal)
-      this.gestionProveedorservice.listarProveedor();
-      this.gestionProveedorservice.listarProveedor();
+      this.gestionProveedorservice.agregarProveedor(this.NuevoLocal).then(value=>{this.gestionProveedorservice.listarProveedor();});
     }
 
     eliminarLocal(id:any){
-      this.gestionProveedorservice.eliminarlocall(id)
-      this.gestionProveedorservice.listarProveedor();
-      this.gestionProveedorservice.listarProveedor();
-      console.log(id)
+      this.gestionProveedorservice.eliminarlocall(id).then(value=>{this.gestionProveedorservice.listarProveedor();});
     }
 
-    
-    
-    LocalActu(LocalAActualizar:Local){
-      this.codLocal=LocalAActualizar.codLocal
-      this.nombreLocal = LocalAActualizar.nombreLocal
-      this.ubicacionLocal=LocalAActualizar.ubicacionLocal
-      this.rucLocal=LocalAActualizar.rucLocal
-      this.contrasena=LocalAActualizar.contrasena
-    }
     actualizarLocales(){
       this.NuevoLocal = new Local(this.codLocal, this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasena)
-      this. gestionProveedorservice.updateLocal(this.NuevoLocal,this.NuevoLocal.codLocal)
-      this.gestionProveedorservice.listarProveedor();
-      this.gestionProveedorservice.listarProveedor();
+      this. gestionProveedorservice.updateLocal(this.NuevoLocal,this.NuevoLocal.codLocal).then(value=>{this.gestionProveedorservice.listarProveedor();});
     }
     // agregar(){
     //     this.gestionProveedorservice.agregarproducto(this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasenaLocal)

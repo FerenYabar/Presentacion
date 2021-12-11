@@ -12,8 +12,8 @@ export class ReversaMainComponent implements OnInit {
   constructor(public reservaService:ReservaService) { }
 
   ngOnInit(): void {
-    
   }
+  
   
 
 }

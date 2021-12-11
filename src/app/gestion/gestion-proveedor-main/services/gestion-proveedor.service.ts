@@ -18,15 +18,18 @@ export class GestionProveedorservice{
             this.lista = resp;            
          });
      }
-    agregarProveedor(local:Local){
-        this.http.post<any>('http://127.0.0.1:8080/api/local',local).subscribe();
+    async agregarProveedor(local:Local){
+        const promesa = this.http.post<any>('http://127.0.0.1:8080/api/local',local).toPromise();
+        return promesa.then(value=>{return true});
     }
     eliminarlocall(id:number){
-        return this.http.delete('http://127.0.0.1:8080/api/local' + '/'+ id).subscribe();
+        const promesa =  this.http.delete('http://127.0.0.1:8080/api/local' + '/'+ id).toPromise();
+        return promesa.then(value=>{return true});
     }
 
     updateLocal(local:Local,id:number){
-        this.http.put<any>('http://127.0.0.1:8080/api/local' + '/'+ id,local).subscribe();
+        const promesa =this.http.put<any>('http://127.0.0.1:8080/api/local' + '/'+ id,local).toPromise();
+        return promesa.then(value=>{return true})
     }
 
 
