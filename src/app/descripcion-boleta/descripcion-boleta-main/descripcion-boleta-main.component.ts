@@ -14,7 +14,7 @@ import { descripcionboletaService } from '../services/descripcion-boleta.service
 export class DescripcionBoletaMainComponent implements OnInit {
 
   constructor(
-    private  descripcionboletaService: descripcionboletaService) 
+    public  descripcionboletaService: descripcionboletaService) 
     {
       this.descripcionboletaService.listarDetalleReserva();
    }
@@ -39,7 +39,15 @@ export class DescripcionBoletaMainComponent implements OnInit {
   eliminarDR(id:any){
     this.descripcionboletaService.eliminarDetalleReserva(id).then(value=>{this.descripcionboletaService.listarDetalleReserva();});
   }
-
+  
+  actualizarDetalleReserva=new DetalleReserva(0,this.cantidadDetalleReserva,this.productolocalDetalleReserva[0],this.reservaDetalleReserva[0])
+  DetalleReservaActu(DetalleReservaAActualizar:DetalleReserva){
+    this.actualizarDetalleReserva=DetalleReservaAActualizar
+    this.codDetalleReserva=DetalleReservaAActualizar.codDetalleReserva;
+    this.cantidadDetalleReserva=DetalleReservaAActualizar.cantidadDetalleReserva;
+    this.productolocalDetalleReserva[0]=DetalleReservaAActualizar.productolocalDetalleReserva;
+    this.reservaDetalleReserva[0]=DetalleReservaAActualizar.reservaDetalleReserva;
+  }
   ActualizarDR(){
     this.NuevoDetalleReserva= new DetalleReserva(this.codDetalleReserva,this.cantidadDetalleReserva,this.productolocalDetalleReserva[0],this.reservaDetalleReserva[0])
     this.descripcionboletaService.updateDetalleReserva(this.NuevoDetalleReserva,this.NuevoDetalleReserva.codDetalleReserva).then(value=>{this.descripcionboletaService.listarDetalleReserva();});

@@ -1,8 +1,8 @@
 
 export class Categoria{
     constructor(
-        private codCategoria:String,
-        private nombreCategoria:String
+        public codCategoria:number,
+        public nombreCategoria:String
     ){}
     get getnombreCategoria(){
         return this.nombreCategoria
@@ -14,22 +14,22 @@ export class Categoria{
         return this.codCategoria
     }
 }
-const ron =new Categoria("C001","Ron");
-const whisky =new Categoria("C002","Whisky");
-const vodka =new Categoria("C003","Vodka");
-const pisco =new Categoria("C004","Pisco");
-const espirituosas =new Categoria("C005","Espirituosas");
-const vino =new Categoria("C006","Vino");
-const brandy =new Categoria("C007","Brandy");
-const champaña =new Categoria("C008","Champaña");
-const ginebra =new Categoria("C009","Ginebra");
-const tequila =new Categoria("C010","Tequila");
-const aperitivos =new Categoria("C011","Aperitivos");
-const cerveza =new Categoria("C012","Cerveza");
-const anizados =new Categoria("C013","Anizados");
-const gin =new Categoria("C014","Gin");
-const coñac=new Categoria("C015","Coñac");
-const orujo=new Categoria("C016","Orujo");
+const ron =new Categoria(1,"Ron");
+const whisky =new Categoria(2,"Whisky");
+const vodka =new Categoria(3,"Vodka");
+const pisco =new Categoria(4,"Pisco");
+const espirituosas =new Categoria(5,"Espirituosas");
+const vino =new Categoria(6,"Vino");
+const brandy =new Categoria(7,"Brandy");
+const champaña =new Categoria(8,"Champaña");
+const ginebra =new Categoria(9,"Ginebra");
+const tequila =new Categoria(10,"Tequila");
+const aperitivos =new Categoria(11,"Aperitivos");
+const cerveza =new Categoria(12,"Cerveza");
+const anizados =new Categoria(13,"Anizados");
+const gin =new Categoria(14,"Gin");
+const coñac=new Categoria(15,"Coñac");
+const orujo=new Categoria(16,"Orujo");
 
 export const categorias:Categoria[]=[
     ron,

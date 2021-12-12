@@ -17,14 +17,11 @@ export class GestionProveedorMainComponent implements OnInit {
         this.gestionProveedorservice.listarProveedor();
     }
     
-  // eliminacion:number[]=[]
+  eliminacion:number[]=[]
 
-  // nombreLocal:String=""
-  // ubicacionLocal:String=""
-  // rucLocal:String=""
-  // contrasenaLocal:String=""
+  
 
-  // locales:Local[]=locales
+  locales:Local[]=locales
 
   ngOnInit(): void {
   }
@@ -38,7 +35,7 @@ export class GestionProveedorMainComponent implements OnInit {
     contrasena:String="";
 
     public NuevoLocal = new Local(0,this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasena)
-
+    public actualizarLocal= new Local(0,this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasena)
     crearLocal(){
       this.gestionProveedorservice.agregarProveedor(this.NuevoLocal).then(value=>{this.gestionProveedorservice.listarProveedor();});
     }
@@ -47,23 +44,26 @@ export class GestionProveedorMainComponent implements OnInit {
       this.gestionProveedorservice.eliminarlocall(id).then(value=>{this.gestionProveedorservice.listarProveedor();});
     }
 
+
+    LocalActu(LocalAActualizar:Local){
+      this.actualizarLocal=LocalAActualizar;
+      this.codLocal=LocalAActualizar.codLocal;
+      this.nombreLocal=LocalAActualizar.nombreLocal;
+      this.ubicacionLocal=LocalAActualizar.ubicacionLocal;
+      this.rucLocal=LocalAActualizar.rucLocal;
+      this.contrasena=LocalAActualizar.contrasena;
+    }
+
     actualizarLocales(){
       this.NuevoLocal = new Local(this.codLocal, this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasena)
-      this. gestionProveedorservice.updateLocal(this.NuevoLocal,this.NuevoLocal.codLocal).then(value=>{this.gestionProveedorservice.listarProveedor();});
+      this.gestionProveedorservice.updateLocal(this.NuevoLocal,this.NuevoLocal.codLocal).then(value=>{this.gestionProveedorservice.listarProveedor();});
     }
-    // agregar(){
-    //     this.gestionProveedorservice.agregarproducto(this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasenaLocal)
-    //   }
-    //    eliminar(){
-    //     this.gestionProveedorservice.eliminarproducto(this.eliminacion)
-    //     this.eliminacion=[]
-    // // // agregar(){
-    // // //   this.gestionProveedorservice.agregarproducto(this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasenaLocal)
-    // // // }
-    // // // eliminar(){
-    // // //   this.gestionProveedorservice.eliminarproducto(this.eliminacion)
-    // // //   this.eliminacion=[]
-  
-    // // // }
 
+   agregar(){
+      this.gestionProveedorservice.agregarproducto(this.nombreLocal,this.ubicacionLocal,this.rucLocal,this.contrasena)
+    }
+      eliminar(){
+       this.gestionProveedorservice.eliminarproducto(this.eliminacion)
+       this.eliminacion=[]
+      }
 }

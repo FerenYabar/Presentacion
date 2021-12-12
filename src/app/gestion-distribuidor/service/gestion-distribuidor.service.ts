@@ -3,6 +3,7 @@ import { ProductoLocal } from '../../modelo/productolocal.class';
 import { productos, Producto } from '../../modelo/producto.class';
 import { localactivo } from '../../login/login-main/services/login.service';
 import { HttpClient } from '@angular/common/http';
+import { productoslocal } from '../../modelo/productolocal.class';
 
 @Injectable({
   providedIn: 'root'
@@ -38,29 +39,29 @@ export class GestionDistribuidorService {
    }
   
 
-  // get getproductofaltantes(){
-  //   const productoslocalfaltante:Producto[]=productos
-  //   const productosenlocal:ProductoLocal[]=productoslocal.filter(element=>element.getlocalProductoLocal==localactivo[0])
-  //   const productosfaltantes:Producto[]=[]
-  //   let result:Producto[]=[]
-  //   productosenlocal.forEach(element => {
-  //     productosfaltantes.push(element.getproducto)
-  //   });
-  //   console.log(productoslocalfaltante)
-  //   console.log(productosfaltantes)
-  //   result = productoslocalfaltante.filter(el => !productosfaltantes.includes(el))
-  //   console.log(result)
-  //   return result
-  // }
+   get getproductofaltantes(){
+     const productoslocalfaltante:Producto[]=productos
+     const productosenlocal:ProductoLocal[]=productoslocal.filter(element=>element.getlocalProductoLocal==localactivo[0])
+    const productosfaltantes:Producto[]=[]
+   let result:Producto[]=[]
+     productosenlocal.forEach(element => {
+     productosfaltantes.push(element.getproducto)
+     });
+    console.log(productoslocalfaltante)
+     console.log(productosfaltantes)
+   result = productoslocalfaltante.filter(el => !productosfaltantes.includes(el))
+     console.log(result)
+     return result
+   }
   
   
-  // precio:number=0
+  precio:number=0
  
   
 
-  // agregar(producto:Producto){
-  //   const nuevoproductolocal:ProductoLocal=new ProductoLocal("PL001",this.precio,localactivo[0],producto)
-  //   productoslocal.push(nuevoproductolocal)
-  // }
+   agregar(producto:Producto){
+    const nuevoproductolocal:ProductoLocal=new ProductoLocal(1,this.precio,localactivo[0],producto)
+     productoslocal.push(nuevoproductolocal)
+  }
 
 }

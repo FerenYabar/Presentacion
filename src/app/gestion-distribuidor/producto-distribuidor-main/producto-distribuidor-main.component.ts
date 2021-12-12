@@ -33,12 +33,22 @@ export class ProductoDistribuidorMainComponent implements OnInit {
   eliminarPL(id:any){
     this.productolocalservice.eliminarProductoLocal(id).then(value=>{this.productolocalservice.listarProductoLocal();});
   }
+
+
+  actualizarProductoLocal = new ProductoLocal(0,this.precioProductoLocal,this.localProductoLocal[0],this.producto[0])
+  ProductoLocalActu(ProductoLocalAActualizar:ProductoLocal){
+    this.actualizarProductoLocal=ProductoLocalAActualizar;
+    this.codProductoLocal=ProductoLocalAActualizar.codProductoLocal;
+    this.precioProductoLocal=ProductoLocalAActualizar.precioProductoLocal;
+    this.localProductoLocal[0]=ProductoLocalAActualizar.localProductoLocal;
+    this.producto[0]=ProductoLocalAActualizar.producto;
+  }
   ActualizarPL(){
     this.NuevoProductoLocal= new ProductoLocal(this.codProductoLocal,this.precioProductoLocal,this.localProductoLocal[0],this.producto[0])
     this.productolocalservice.updateProductoLocal(this.NuevoProductoLocal,this.NuevoProductoLocal.codProductoLocal).then(value=>{this.productolocalservice.listarProductoLocal();});
   }
-//   get getproductolocalservice(){
-//     return this.productolocalservice
-//   }
-//  precio=0
+   get getproductolocalservice(){
+     return this.productolocalservice
+   }
+ precio=0
 }

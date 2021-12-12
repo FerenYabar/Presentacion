@@ -35,14 +35,15 @@ export class descripcionboletaService{
     return promesa.then(value=>{return true});
   }
 
-  // detallereserva= detallesreservas.filter(elemen => elemen.getReservas.getcodReserva==reservaactiva[0].getcodReserva);
+   public detallereserva= detallesreservas.filter(elemen => elemen.getReservas.getcodReserva==reservaactiva[0].getcodReserva);
 
-  // total(detallereserva:DetalleReserva[]):number{
-  //   let cant:number=0
-  //   detallereserva.forEach(element => {
-  //   cant = cant+(element.getproductoDetalleReserva.getprecioproductolocal*element.getcantiaddDEtalleReserva) 
-  //   }); 
-  //   console.log(this.detallereserva)
-  //   console.log(reservaactiva[0])
-  //   return cant
+   total(detallereserva:DetalleReserva[]):number{
+     let cant:number=0
+     detallereserva.forEach(element => {
+     cant = cant+(element.getproductoDetalleReserva.getprecioproductolocal*element.getcantiaddDEtalleReserva) 
+     }); 
+     console.log(this.detallereserva)
+     console.log(reservaactiva[0])
+     return cant
 }  
+}

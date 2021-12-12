@@ -4,7 +4,7 @@ import { Categoria, categorias } from '../../../modelo/categoria.class';
 @Injectable()
 export class GestionCategoriaservice{
     agregarcategoria(nombreCategoria:String){
-        const nuevoCategoria:Categoria=new Categoria("C0"+(categorias.length+1),nombreCategoria)
+        const nuevoCategoria:Categoria=new Categoria(0+(categorias.length+1),nombreCategoria)
         categorias.push(nuevoCategoria);
     }
     eliminarcategoria(eliminacion:number[]){

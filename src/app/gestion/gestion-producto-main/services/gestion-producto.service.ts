@@ -6,7 +6,7 @@ import { Marca } from '../../../modelo/marca.class';
 @Injectable()
 export class Gestionproductoservice{
     agregarproducto(nombreProducto:String,mililitrosProducto:number,descripcionProducto:String,volalcoholProducto:number,imagenPRoducto:String,marcaProducto:Marca,categoriaproducto:Categoria){
-        const nuevoProducto:Producto=new Producto("P00"+(productos.length+1),nombreProducto,mililitrosProducto,descripcionProducto,volalcoholProducto,imagenPRoducto,marcaProducto,categoriaproducto)
+        const nuevoProducto:Producto=new Producto(0+(productos.length+1),nombreProducto,mililitrosProducto,descripcionProducto,volalcoholProducto,imagenPRoducto,marcaProducto,categoriaproducto)
         productos.push(nuevoProducto);
     }
     eliminarproducto(eliminacion:number[]){

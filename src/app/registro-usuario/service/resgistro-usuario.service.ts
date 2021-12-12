@@ -7,6 +7,7 @@ import { Usuario, usuarios } from '../../modelo/usuario.class';
 export class ResgistroUsuarioService {
 
   constructor() { }
+  codUsuario:number=0
   dniUsuario:String=''
   NombreUsuario:String=''
   ApeliidoUsuario:String=''
@@ -20,7 +21,7 @@ export class ResgistroUsuarioService {
 
   registrar():void{
     if(this.Contrasena==this.Contrasenaa){
-      const nuevoUsuario:Usuario=new Usuario(this.dniUsuario,
+      const nuevoUsuario:Usuario=new Usuario(this.codUsuario,this.dniUsuario,
         this.NombreUsuario,this.ApeliidoUsuario,this.Usuario,
         this.Contrasena,this.Celular,this.Correo,this.Direccion)
         usuarios.push(nuevoUsuario)

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Reserva } from '../modelo/reserva.class';
+import { Reserva, reservas } from '../modelo/reserva.class';
 import { usuarioactivo, localactivo } from '../login/login-main/services/login.service';
 import { usuarios, Usuario } from '../modelo/usuario.class';
 import { Router } from '@angular/router';
@@ -39,31 +39,31 @@ export class ServiciosService {
   }
 
   // }
-  // usuarioactivo=usuarioactivo
-  // localactivo=localactivo
-  // listareservas:Reserva[]=[]
+  usuarioactivo=usuarioactivo
+   localactivo=localactivo
+   listareservas:Reserva[]=[]
   
-  // get getlistareservas(){
-  //   if(usuarioactivo.length!=0){
-  //     this.listareservas = reservas.filter(element => element.getusuarioreserva ==  usuarioactivo[0] );
+  get getlistareservas(){
+     if(usuarioactivo.length!=0){
+       this.listareservas = reservas.filter(element => element.getusuarioreserva ==  usuarioactivo[0] );
       
-  //   }else{
-  //     this.listareservas = reservas.filter(element => element.getlocalReserva ==  localactivo[0]);
-  //   }
-  //   return this.listareservas;
+    }else{
+       this.listareservas = reservas.filter(element => element.getlocalReserva ==  localactivo[0]);
+     }
+     return this.listareservas;
 
-  // }
+   }
   
   
-  // eliminar(numero:number){
-  //   this.listareservas.splice(numero,1);
-  // }
+   eliminar(numero:number){
+     this.listareservas.splice(numero,1);
+  }
 
-  // vista(reserva:Reserva){
-  //   reservaactiva.splice(0,1)
-  //   reservaactiva.push(reserva)
-  //   this.route.navigate(['descripcion-boleta'])
+   vista(reserva:Reserva){
+    reservaactiva.splice(0,1)
+    reservaactiva.push(reserva)
+    this.route.navigate(['descripcion-boleta'])
 
-  // }
+ }
 }
  export const reservaactiva:Reserva[]=[]
