@@ -11,57 +11,31 @@ import { productoslocal } from '../../modelo/productolocal.class';
 export class GestionDistribuidorService {
 
   constructor(private http:HttpClient) {
+    this.http.get<ProductoLocal>('http://127.0.0.1:8080/api/productolocal').subscribe((resp:any)=>{console.log(resp);this.productolocales=resp;});
    }
 
-   public lista:ProductoLocal[]=[]
-   
-   listarProductoLocal(){
-     this.http.get<ProductoLocal>('http://127.0.0.1:8080/api/productolocal')
-     .subscribe((resp:any)=>{
-       console.log(resp);
-       this.lista=resp;
-     });
-   }
-
-   async agregarProductoLocal(productolocal:ProductoLocal){
-    const promesa= this.http.post<any>('http://127.0.0.1:8080/api/productolocal',productolocal).toPromise();
-    return promesa.then(value=>{return true});
-   }
-
-   async eliminarProductoLocal(id:number){
-     const promesa= this.http.delete<any>('http://127.0.0.1:8080/api/productolocal' + '/' + id).toPromise();
-     return promesa.then(value=>{return true});
-   }
-
-   async updateProductoLocal(productolocal:ProductoLocal,id:number){
-     const promesa=this.http.put<any>('http://127.0.0.1:8080/api/productolocal' + '/' + id,productolocal).toPromise();
-     return promesa.then(value =>{return true});
-   }
-  
+   public productolocales:ProductoLocal[]=[]
 
    get getproductofaltantes(){
-     const productoslocalfaltante:Producto[]=productos
-     const productosenlocal:ProductoLocal[]=productoslocal.filter(element=>element.getlocalProductoLocal==localactivo[0])
+    const productoslocalfaltante:Producto[]=productos
+    const productosenlocal:ProductoLocal[]=this.productolocales.filter(element=>element.getlocalProductoLocal==localactivo[0])
     const productosfaltantes:Producto[]=[]
-   let result:Producto[]=[]
-     productosenlocal.forEach(element => {
-     productosfaltantes.push(element.getproducto)
-     });
+    let result:Producto[]=[]
+    productosenlocal.forEach(element => {
+    productosfaltantes.push(element.getproducto)
+    });
     console.log(productoslocalfaltante)
-     console.log(productosfaltantes)
-   result = productoslocalfaltante.filter(el => !productosfaltantes.includes(el))
-     console.log(result)
-     return result
-   }
-  
+    console.log(productosfaltantes)
+    result = productoslocalfaltante.filter(el => !productosfaltantes.includes(el))
+    console.log(result)
+    return result
+  }
   
   precio:number=0
  
-  
-
-   agregar(producto:Producto){
-    const nuevoproductolocal:ProductoLocal=new ProductoLocal(1,this.precio,localactivo[0],producto)
-     productoslocal.push(nuevoproductolocal)
+   async agregar(producto:Producto){
+    const promesa= this.http.post<any>('http://127.0.0.1:8080/api/producto',producto).toPromise();
+    return promesa.then(value=>{return true});
   }
 
 }

@@ -45,8 +45,7 @@ export class LoginService {
   
 
   Validacion(usuario:string,contrasena:string):Boolean{
-    const usuarioexistente:Usuario[]=usuarios.filter(elemen => (elemen.getusuariousuario==usuario && elemen.getconstrasenaUsuario==contrasena))
-    
+    const usuarioexistente:Usuario[]=usuarios.filter(elemen => (elemen.getusuariousuario==usuario && elemen.getconstrasenaUsuario==contrasena))    
     if(usuarioexistente.length!=0){
       usuarioactivo.push(usuarioexistente[0])
       return true

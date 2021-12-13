@@ -5,8 +5,8 @@ export class ProductoLocal{
     constructor(
         public codProductoLocal:number,
         public precioProductoLocal:number,
-        public localProductoLocal:Local,
-        public producto:Producto
+        public tieneLocal:Local,
+        public tieneProducto:Producto
     ){}
     get getcodProductoLocal(){
         return this.codProductoLocal
@@ -15,10 +15,10 @@ export class ProductoLocal{
         return this.precioProductoLocal
     }
     get getlocalProductoLocal(){
-        return this.localProductoLocal
+        return this.tieneLocal
     }
     get getproducto(){
-        return this.producto
+        return this.tieneProducto
     }
 }
  const productolocal01=new ProductoLocal(1,25,locales[1],productos[0])

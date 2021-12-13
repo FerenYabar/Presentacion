@@ -5,7 +5,7 @@
             
                 <tr *ngFor="let reserva of entregaService.getlistareservas;let i=index">
                     <td class="col-s-10 pedido">{{reserva.getcodReserva}}</td>
-                    <td class="col-s-2 entrega"><button (click)="entregaService.eliminar(i)">Eliminar</button><button (click)="entregaService.vista(reserva)">Vista</button></td>
+                    <td class="col-s-2 entrega"><button (click)="entregaService.eliminar(reserva)">Eliminar</button><button (click)="entregaService.vista(reserva)">Vista</button></td>
                 </tr>
             </table>
             </div>
@@ -14,7 +14,7 @@
                 <table class="col-s-12">
                 <tr *ngFor="let reserva of entregaService.getlistareservas;let i=index">
                     <td class="col-s-10 pedido">{{reserva.getcodReserva}}-{{reserva.getusuarioreserva.getApellidoUsuario}}</td>
-                    <td class="col-s-2 entrega"><button (click)="entregaService.eliminar(i)">Marcar Entregado</button><button (click)="entregaService.vista(reserva)">Vista</button></td>
+                    <td class="col-s-2 entrega"><button (click)="entregaService.eliminar(reserva)">Marcar Entregado</button><button (click)="entregaService.vista(reserva)">Vista</button></td>
                 </tr>
             </table>
             </div>

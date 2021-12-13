@@ -13,51 +13,27 @@ export class ServiciosService {
 
   constructor(private route:Router,
   private http:HttpClient) { 
+    this.http.get<Reserva[]>('http://127.0.0.1:8080/api/reserva').subscribe((resp:any)=>{console.log(resp);this.reservass=resp;});
   }
-  public lista:Reserva[]=[]
-  listarReserva(){
-    this.http.get<Reserva>('http://127.0.0.1:8080/api/reserva')
-    .subscribe((resp:any)=>{
-      console.log(resp);
-      this.lista=resp;
-    });
+  reservass:Reserva[]=[]
+
+  get getlistareservas(){
+    if(usuarioactivo.length!=0){
+      this.reservass = this.reservass.filter(element => element.getusuarioreserva ==  usuarioactivo[0] );
+     
+   }else{
+      this.reservass = this.reservass.filter(element => element.getlocalReserva ==  localactivo[0]);
+    }
+    return this.reservass;
   }
 
-  async agregarReserva(reserva:Reserva){
-    const promesa= this.http.post<any>('http://127.0.0.1:8080/api/reserva',reserva).toPromise();
-    return promesa.then(value=>{return true});
-  }
-
-  async eliminarReserva(id:number){
-    const promesa= this.http.delete<any>('http://127.0.0.1:8080/api/reserva' + '/' + id).toPromise();
-    return promesa.then(value=>{return true});
-  }
-
-  async updateReserva(reserva:Reserva,id:number){
-    const promesa=this.http.put<any>('http://127.0.0.1:8080/api/reserva' + '/' + id,reserva).toPromise();
-    return promesa.then(value =>{return true});
-  }
-
+  eliminar(reserva:Reserva){
+    const promesa= this.http.delete<any>('http://127.0.0.1:8080/api/reserva' + '/' + reserva.codReserva).toPromise();
+    }
+  
   // }
   usuarioactivo=usuarioactivo
    localactivo=localactivo
-   listareservas:Reserva[]=[]
-  
-  get getlistareservas(){
-     if(usuarioactivo.length!=0){
-       this.listareservas = reservas.filter(element => element.getusuarioreserva ==  usuarioactivo[0] );
-      
-    }else{
-       this.listareservas = reservas.filter(element => element.getlocalReserva ==  localactivo[0]);
-     }
-     return this.listareservas;
-
-   }
-  
-  
-   eliminar(numero:number){
-     this.listareservas.splice(numero,1);
-  }
 
    vista(reserva:Reserva){
     reservaactiva.splice(0,1)

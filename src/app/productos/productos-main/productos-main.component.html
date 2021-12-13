@@ -10,11 +10,11 @@
 
                 <div *ngFor="let productolocal1 of productoService.filtrar()" class="col-s-6 col-m-4 fotos">
                     
-                    <img src={{productolocal1.getproducto.getimagenproducto}} alt="">
+                    <img src={{productolocal1.tieneProducto.imagenProducto}} alt="">
                         <div class="infor">
-                            <h1 >{{productolocal1.getproducto.getnombreproducto}}</h1>
-                            <p>{{productolocal1.getproducto.getdescripcionproducto}}</p>
-                            <h2>{{productolocal1.getprecioproductolocal}}</h2>
+                            <h1 >{{productolocal1.tieneProducto.nombreProducto}}</h1>
+                            <p>{{productolocal1.tieneProducto.descripcionProducto}}</p>
+                            <h2>{{productolocal1.precioProductoLocal}}</h2>
                         </div>
                         <div class="boton">
                             <ul>
